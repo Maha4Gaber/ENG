@@ -1,0 +1,17 @@
+<div class="row align-items-center">
+    <div class="col-md-4">
+        <img class="w-100 " [src]="productdetails.imageCover " alt=" ">
+    </div>
+    <div class="col-md-8 ">
+        <h2 class="h4 fw-bolder mb-2 ">{{productdetails?.title}}</h2>
+        <p class="p-3 text-muted ">{{productdetails?.description}}</p>
+        <div class="d-flex align-items-center justify-content-between mt-4 ">
+            <span class="fw-bold text-muted font-sm "> {{productdetails.price}} EGP</span>
+            <div>
+                <i class="fas fa-star rating-color "></i>
+                <span class="fw-bold text-muted font-sm "> {{productdetails.ratingsAverage}} </span>
+            </div>
+        </div>
+        <button class="w-100 text-white bg-main btn mt-3 "> + Add </button>
+    </div>
+</div>

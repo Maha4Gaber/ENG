@@ -1,0 +1,58 @@
+<nav class="navbar fixed-top navbar-expand-sm navbar-light bg-light">
+    <div class="container">
+        <a class="navbar-brand " routerLink="home">
+            <img src="./assets/images/bg.png" alt="">
+        </a>
+        <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+            <ul class="navbar-nav me-auto mt-2 mt-lg-0">
+                <li *ngIf="isLogin" class="nav-item">
+                    <a class="nav-link active" href="#" routerLink="home" aria-current="page">Home</a>
+                </li>
+                <!-- <li *ngIf="isLogin" class="nav-item">
+                    <a class="nav-link " href="# " routerLink="about " aria-current="page ">about</a>
+                </li> -->
+                <li *ngIf="isLogin" class="nav-item">
+                    <a class="nav-link " href="#" routerLink="cart" aria-current="page">Cart</a>
+                </li>
+                <li *ngIf="isLogin" class="nav-item">
+                    <a class="nav-link " href="#" routerLink="products" aria-current="page">Products</a>
+                </li>
+                <li *ngIf="isLogin" class="nav-item">
+                    <a class="nav-link " href="# " routerLink="categories" aria-current="page ">Categories</a>
+                </li>
+                <li *ngIf="isLogin" class="nav-item">
+                    <a class="nav-link " href="#" routerLink="brands" aria-current="page">Brands</a>
+                </li>
+
+            </ul>
+            <ul class="navbar-nav ms-auto   mt-2 mt-lg-0">
+                <li class="nav-item d-flex align-items-center">
+                    <i class="fab mx-2 fa-instagram"> </i>
+                    <i class="fab mx-2 fa-facebook"> </i>
+                    <i class="fab mx-2 fa-tiktok"> </i>
+                    <i class="fab mx-2 fa-twitter"> </i>
+                    <i class="fab mx-2 fa-linkedin-in "> </i>
+                    <i class="fab mx-2 fa-youtube  "> </i>
+                </li>
+                <li *ngIf="!isLogin" class="nav-item" class="nav-item">
+                    <a class="nav-link " href="#" routerLink="login" aria-current="page">Login</a>
+                </li>
+                <li *ngIf="!isLogin" class="nav-item">
+                    <a class="nav-link " href="#" routerLink="register" aria-current="page">Register</a>
+                </li>
+                <li *ngIf="isLogin" class="nav-item mx-3 position-relative">
+                    <a class="nav-link " href="#" routerLink="cart" aria-current="page">
+                        <i class="fa fa-shopping-cart text-main fa-lg" aria-hidden="true"></i></a>
+                    <span class=" position-absolute top-0 end-0 badge bg-main  "> {{cartnumber}}</span>
+                </li>
+                <li *ngIf="isLogin" class="nav-item">
+                    <a class="nav-link cursor-pointer " (click)="logOut()" aria-current="page">LogOut</a>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</nav>

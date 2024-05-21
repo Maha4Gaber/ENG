@@ -1,0 +1,27 @@
+<div class="w-75 mx-auto py-4">
+    <h4>LogIn Now</h4>
+    <div *ngIf="apiError.length > 0" class="alert alert-danger " role="alert">
+        {{apiError}}
+    </div>
+
+    <form (ngSubmit)="handlelogin(loginform)" [formGroup]="loginform">
+        <label for="email"> Email : </label>
+        <input formControlName="email" type="email" class="form-control mb-2 " id="email">
+        <div *ngIf="loginform.get('email')?.errors && loginform.get('email')?.touched  " class="alert alert-danger">
+            <p *ngIf="loginform.get('email')?.getError('email')" class="m-0">Email Invalid</p>
+            <p *ngIf="loginform.get('email')?.getError('required')" class="m-0">email is Required</p>
+        </div>
+        <label for="password"> Password : </label>
+        <input formControlName="password" type="password" class="form-control mb-2 " id="password">
+        <div *ngIf="loginform.get('password')?.errors && loginform.get('password')?.touched  " class="alert alert-danger">
+            <p *ngIf="loginform.get('password')?.getError('minlength')" class="m-0">password MinLength is 6</p>
+            <p *ngIf="loginform.get('password')?.getError('pattern')" class="m-0">password Invalid</p>
+            <p *ngIf="loginform.get('password')?.getError('required')" class="m-0">password is Required</p>
+        </div>
+
+        <button [disabled]="loginform.invalid" type="submit" class="btn border-0 text-white ms-auto  bg-main d-block   ">
+          <i *ngIf="islouding" class="fas fa-spin fa-spinner" aria-hidden="true"></i> 
+          <span *ngIf="!islouding">Login</span>
+        </button>
+    </form>
+</div>

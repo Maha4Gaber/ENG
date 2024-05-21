@@ -1,0 +1,24 @@
+<div class="bg-main-light p-4 my-4">
+    <h3>Shop Cart </h3>
+    <h6 class="text-main">Totla Price : {{cartDetails?.totalCartPrice}}</h6>
+    <div class="row border-bottom py-3 align-items-center" *ngFor="let product of cartDetails?.products">
+        <div class="col-md-1">
+            <img class="w-100" [src]="product?.product?.imageCover" alt="">
+        </div>
+        <div class="col-md-11 d-flex justify-content-between">
+            <div>
+                <h6> {{product.product.title.split(' ').slice(0,2).join(' ')}}</h6>
+                <h6 class="text-main"> {{product.product.price}}</h6>
+                <button (click)="removeCartItem(product.product.id)" class="btn m-0 p-0"><i class="fa-regular fa-trash-can text-main mx-2 "></i> Remove</button>
+            </div>
+            <div>
+                <span (click)="updateCountIten(product.product.id,product.count +1)" class="btn border-main btn-sm">+</span>
+                <span class="mx-3">{{product.count}}</span>
+                <span (click)="updateCountIten(product.product.id,product.count -1 )" class="btn border-main btn-sm">-</span>
+            </div>
+        </div>
+    </div>
+    <button class="btn bg-main text-white mt-5"> 
+      <a routerLink="/checkout">Online  Paument</a>
+    </button>
+</div>
