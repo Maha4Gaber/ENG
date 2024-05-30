@@ -14,6 +14,8 @@ export class CartService {
       next: (res) =>{
         this.numberofItem.next(res.numOfCartItems)
         console.log(res);
+        // console.log(res.data._id);
+        localStorage.setItem('cartId',res.data._id)
         
       },
       error: (err) =>{
@@ -48,9 +50,9 @@ export class CartService {
     {headers:this.headers}
     )
   }
-  onlinePayment(cartid:string,shippingAddress:any):Observable<any>
+  onlinePayment(shippingAddress:any,cartid:any):Observable<any>
   {
-    return this._HttpClient.put(`https://ecommerce.routemisr.com/api/v1/orders/checkout-session/${cartid}?url=http://localhost:4200`,
+    return this._HttpClient.post(`https://route-ecommerce.onrender.com/api/v1/orders/checkout-session/${cartid}?url=http://localhost:4200`,
     {shippingAddress:shippingAddress},
     {headers:this.headers}
     )

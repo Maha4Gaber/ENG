@@ -9,23 +9,23 @@
         <div class="collapse navbar-collapse" id="collapsibleNavId">
             <ul class="navbar-nav me-auto mt-2 mt-lg-0">
                 <li *ngIf="isLogin" class="nav-item">
-                    <a class="nav-link active" href="#" routerLink="home" aria-current="page">Home</a>
+                    <a class="nav-link active" routerLink="/home" aria-current="page">Home</a>
                 </li>
                 <!-- <li *ngIf="isLogin" class="nav-item">
                     <a class="nav-link " href="# " routerLink="about " aria-current="page ">about</a>
                 </li> -->
                 <li *ngIf="isLogin" class="nav-item">
-                    <a class="nav-link " href="#" routerLink="cart" aria-current="page">Cart</a>
+                    <a class="nav-link " routerLink="/cart" aria-current="page">Cart</a>
                 </li>
-                <li *ngIf="isLogin" class="nav-item">
-                    <a class="nav-link " href="#" routerLink="products" aria-current="page">Products</a>
-                </li>
-                <li *ngIf="isLogin" class="nav-item">
+                <!-- <li *ngIf="isLogin" class="nav-item">
+                    <a class="nav-link " routerLink="products" aria-current="page">Products</a>
+                </li> -->
+                <!-- <li *ngIf="isLogin" class="nav-item">
                     <a class="nav-link " href="# " routerLink="categories" aria-current="page ">Categories</a>
-                </li>
-                <li *ngIf="isLogin" class="nav-item">
-                    <a class="nav-link " href="#" routerLink="brands" aria-current="page">Brands</a>
-                </li>
+                </li> -->
+                <!-- <li *ngIf="isLogin" class="nav-item">
+                    <a class="nav-link " routerLink="brands" aria-current="page">Brands</a>
+                </li> -->
 
             </ul>
             <ul class="navbar-nav ms-auto   mt-2 mt-lg-0">
@@ -38,13 +38,13 @@
                     <i class="fab mx-2 fa-youtube  "> </i>
                 </li>
                 <li *ngIf="!isLogin" class="nav-item" class="nav-item">
-                    <a class="nav-link " href="#" routerLink="login" aria-current="page">Login</a>
+                    <a class="nav-link " routerLink="login" aria-current="page">Login</a>
                 </li>
                 <li *ngIf="!isLogin" class="nav-item">
-                    <a class="nav-link " href="#" routerLink="register" aria-current="page">Register</a>
+                    <a class="nav-link " routerLink="register" aria-current="page">Register</a>
                 </li>
                 <li *ngIf="isLogin" class="nav-item mx-3 position-relative">
-                    <a class="nav-link " href="#" routerLink="cart" aria-current="page">
+                    <a class="nav-link " routerLink="cart" aria-current="page">
                         <i class="fa fa-shopping-cart text-main fa-lg" aria-hidden="true"></i></a>
                     <span class=" position-absolute top-0 end-0 badge bg-main  "> {{cartnumber}}</span>
                 </li>
